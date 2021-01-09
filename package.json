@@ -4,12 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve:dev": "webpack serve --config ./webpack.config.dev.js",
-    "build:dev": "yarn run sass && webpack --config ./webpack.config.dev.js",
-    "sass": "clear && node-sass ./src/assets/sass/_index.scss ./src/assets/css/main.css"
+    "serve:dev": "yarn run build:dev && webpack serve --config ./webpack.config.dev.js",
+    "build:dev": "rm -rf ./build && yarn run sass:dev && webpack --config ./webpack.config.dev.js && yarn run icon",
+    "sass:dev": "clear && node-sass ./src/assets/sass/_index.scss ./src/assets/css/main.css",
+    "sass:prod": "clear && node-sass ./src/assets/sass/_index.scss ./src/assets/css/main.css --output-style",
+    "icon": "cp ./src/assets/images/favicon.svg ./build"
   },
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "html-loader": "^1.3.2",

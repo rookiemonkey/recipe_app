@@ -1,5 +1,4 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -23,15 +22,15 @@ module.exports = {
 
 
     output: {
-        publicPath: "build",
-        path: path.resolve(__dirname, "build"),
+        publicPath: "",
+        path: path.resolve(__dirname, "./build"),
         filename: '[name].[contenthash].bundle.js'
     },
 
 
     devServer: {
         port: 8080,
-        contentBase: path.resolve(__dirname, "build"),
+        contentBase: path.resolve(__dirname, "./build"),
         hot: true
     },
 
@@ -42,6 +41,8 @@ module.exports = {
             new TerserPlugin(),
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, "./src/index.html"),
+                favicon: "./src/assets/images/favicon.svg",
+                publicPath: '',
                 minify: {
                     removeAttributeQuotes: true,
                     collapseWhitespace: true,
@@ -53,7 +54,6 @@ module.exports = {
 
 
     plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, "./src/index.html") }),
         new MiniCssExtractPlugin({ filename: '[name].[contenthash].bundle.css' })
     ],
