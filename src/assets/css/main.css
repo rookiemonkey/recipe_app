@@ -79,6 +79,9 @@ body {
   #nav #nav_options .nav_options_item:hover {
     background-color: rgba(255, 255, 255, 0.25); }
 
+#nav #nav_options .highlighted {
+  background-color: rgba(255, 255, 255, 0.25); }
+
 ul#list_recipecards {
   margin: 15px auto;
   width: 80vw;

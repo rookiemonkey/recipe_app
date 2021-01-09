@@ -1,4 +1,4 @@
-import CategoryItem from './components/CategoryItem';
+import CategoryCard from './components/CategoryCard';
 import ProductCard from './components/ProductCard';
 import BtnMore from './components/BtnMore';
 import variables from './utilities/_variables';
@@ -14,7 +14,7 @@ const UIController = new class UIController {
 
             for (const category of categories) {
                 const { strCategory, idCategory } = category
-                const li = await new CategoryItem(strCategory, idCategory).render();
+                const li = await new CategoryCard(strCategory, idCategory).render();
                 parent.appendChild(li);
             }
         }
@@ -56,7 +56,7 @@ const UIController = new class UIController {
     }
 
 
-    async renderCatergoryCards(query: string): Promise<void> {
+    async renderProductCardsByCat(query: string): Promise<void> {
         try {
             const more = document.querySelector('#btn_more') as HTMLButtonElement;
             const parent = document.querySelector('#list_recipecards') as HTMLLIElement;
@@ -79,6 +79,7 @@ const UIController = new class UIController {
             console.log('Error in Rendering CategoryCards', error)
         }
     }
+
 
 }
 
