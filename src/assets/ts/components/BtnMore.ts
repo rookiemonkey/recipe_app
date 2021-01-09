@@ -40,7 +40,11 @@ export default class BtnMore {
                 const meal = meals[0]
                 const { idMeal, strMeal, strCategory, strMealThumb, strSource } = meal
                 const li = new ProductCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
+
                 parent.appendChild(li);
+
+                const image = document.getElementById(`image_${idMeal}`) as HTMLDivElement;
+                image.style.backgroundImage = `url(${strMealThumb})`;
             }
         }
     }

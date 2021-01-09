@@ -43,7 +43,12 @@ const UIController = new class UIController {
             for (const meal of datas) {
                 const { idMeal, strMeal, strCategory, strMealThumb, strSource } = meal;
                 const li = new ProductCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
+
                 parent.appendChild(li);
+
+                const image = document.getElementById(`image_${idMeal}`) as HTMLDivElement;
+                image.style.backgroundImage = `url(${strMealThumb})`;
+
             }
 
             if (!more) new BtnMore('/random.php').render();
@@ -68,7 +73,11 @@ const UIController = new class UIController {
             for (const meal of meals) {
                 const { idMeal, strMeal, strMealThumb, strSource } = meal;
                 const li = new ProductCard(idMeal, strMeal, strMealThumb, query, strSource).render();
+
                 parent.appendChild(li);
+
+                const image = document.getElementById(`image_${idMeal}`) as HTMLDivElement;
+                image.style.backgroundImage = `url(${strMealThumb})`;
             }
 
             if (!more) new BtnMore(query).render();

@@ -11,22 +11,48 @@ ul#list_recipecards {
 ul#list_recipecards .list_recipecards_item {
     height: 450px;
     width: 90%;
+    list-style-type: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.list_recipecards_item:hover > .recipe_image,
+.list_recipecards_item:focus > .recipe_image {
+    transform: scale(1.2);
+}
+
+ul#list_recipecards .list_recipecards_item .recipe_image,
+ul#list_recipecards .list_recipecards_item .overlay {
+    height: 100%;
+}
+
+ul#list_recipecards .list_recipecards_item .recipe_image {
     background-position: center;
     background-size: cover;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
-    list-style-type: none;
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-in-out;
 }
 
 ul#list_recipecards .list_recipecards_item .overlay {
     background-image: linear-gradient(180deg, transparent, black);
     background-blend-mode: overlay;
-    height: 100%;
     padding: $spacing_md;
+}
+
+ul#list_recipecards .list_recipecards_item .recipe_meta {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+	position: relative;
+	z-index: 999999;
+    top: -135px;
+    padding: $spacing_md;
+    width: 100%;
+	height: 130px;
 
     p {
         text-align: right;
