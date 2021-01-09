@@ -1,3 +1,4 @@
+import UIController from '../ui';
 
 export default class CategoryItem {
 
@@ -8,16 +9,22 @@ export default class CategoryItem {
 
 
     async render(): Promise<HTMLLIElement> {
+
+        // create the element
         const li = document.createElement('li') as HTMLLIElement;
-        const lc = this.category.toLowerCase();
-        const module = await import(`../../images/${lc}.svg`);
+        const module = await import(`../../images/${this.category.toLowerCase()}.svg`);
 
         li.classList.add('nav_options_item');
 
         li.innerHTML = `
-            <img src='${module.default}' alt="${lc}" title="${this.category}" data-categoryid="${this.categoryId}" />
+            <img src='${module.default}' alt="${this.category.toLowerCase()}" title="${this.category}" data-categoryid="${this.categoryId}" />
             ${this.category}
         `
+
+        // attach onlick event listener
+        li.onclick = () => UIController.renderCatergoryCards(this.category)
+
+        // return the element
         return li
     }
 

@@ -38,6 +38,8 @@ const UIController = new class UIController {
                 datas.push(meals[0])
             }
 
+            parent.innerHTML = ``;
+
             for (const meal of datas) {
                 const { idMeal, strMeal, strCategory, strMealThumb, strSource } = meal;
                 const li = new ProductCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
@@ -50,6 +52,31 @@ const UIController = new class UIController {
         catch (error) {
             alert('Error in Rendering ProductCards')
             console.log('Error in Rendering ProductCards', error)
+        }
+    }
+
+
+    async renderCatergoryCards(query: string): Promise<void> {
+        try {
+            const more = document.querySelector('#btn_more') as HTMLButtonElement;
+            const parent = document.querySelector('#list_recipecards') as HTMLLIElement;
+            const raw = await fetch(`${base_url}/filter.php?c=${query}`);
+            const { meals } = await raw.json();
+
+            parent.innerHTML = ``;
+
+            for (const meal of meals) {
+                const { idMeal, strMeal, strMealThumb, strSource } = meal;
+                const li = new ProductCard(idMeal, strMeal, strMealThumb, query, strSource).render();
+                parent.appendChild(li);
+            }
+
+            if (!more) new BtnMore(query).render();
+        }
+
+        catch (error) {
+            alert('Error in Rendering CategoryCards')
+            console.log('Error in Rendering CategoryCards', error)
         }
     }
 

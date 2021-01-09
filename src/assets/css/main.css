@@ -64,16 +64,20 @@ body {
 #nav #nav_options .nav_options_item {
   list-style-type: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: background-color 500ms ease-in-out; }
   #nav #nav_options .nav_options_item img {
     margin-bottom: 8px;
     width: 75px;
     height: 75px; }
+  #nav #nav_options .nav_options_item:hover {
+    background-color: rgba(255, 255, 255, 0.25); }
 
 ul#list_recipecards {
   margin: 15px auto;

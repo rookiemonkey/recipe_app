@@ -41,16 +41,22 @@
 #nav #nav_options .nav_options_item {
     list-style-type: none;
     border: 1px solid $color_white_muted;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center ;
     padding: $spacing_md;
     cursor: pointer;
+    transition: background-color 500ms ease-in-out;
 
     img {
         margin-bottom: $spacing_sm;
         width: 75px;
         height: 75px;
+    }
+
+    &:hover {
+        background-color: $color_white_muted;
     }
 }
