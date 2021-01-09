@@ -15,8 +15,13 @@ const App = new class RecipeApp {
 
     }
 
+    onload() {
+        UIController.renderCategoryItems();
+        UIController.renderProductCards();
+    }
+
 }
 
-UIController.renderNavItems();
+window.onload = App.onload;
 
 export default App;

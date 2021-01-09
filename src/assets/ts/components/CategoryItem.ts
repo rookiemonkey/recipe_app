@@ -1,6 +1,5 @@
 
-export default class NavItem {
-
+export default class CategoryItem {
 
     constructor(
         private category: string,
@@ -8,9 +7,9 @@ export default class NavItem {
     ) { }
 
 
-    async node(): Promise<any> {
-        const lc = this.category.toLowerCase();
+    async node(): Promise<HTMLLIElement> {
         const li = document.createElement('li') as HTMLLIElement;
+        const lc = this.category.toLowerCase();
         const module = await import(`../../images/${lc}.svg`);
 
         li.classList.add('nav_options_item');

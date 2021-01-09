@@ -1,0 +1,42 @@
+
+ul#list_recipecards {
+    margin: $spacing_md auto;
+    width: 80vw;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $spacing_sm;
+}
+
+ul#list_recipecards .list_recipecards_item {
+    height: 450px;
+    width: 90%;
+    border: 1px solid $color_white_muted;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+ul#list_recipecards .list_recipecards_item .overlay {
+    background-image: linear-gradient(180deg, transparent, black);
+    background-blend-mode: overlay;
+    height: 100%;
+    padding: $spacing_md;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    p {
+        text-align: right;
+    }
+
+    p a {
+        text-decoration: none;
+        font-style: italic;
+        font-size: 0.75rem;
+        color: white;
+    }
+}

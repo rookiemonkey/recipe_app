@@ -22,22 +22,24 @@ $spacing_lg: 25px;
 }
 
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: Poppins;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins;
 }
 
 body {
-    width: 100vw;
-    min-height: 100vh;
-    color: white;
-    background-image: url('../images/bg0.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	background-blend-mode: overlay;
-	background-color: rgba(0, 0, 0, 0.90);
+  width: 100vw;
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+  background-image: url('../images/bg0.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.90);
 }
 
 @import './navigation.scss';
+@import './recipecard.scss';
