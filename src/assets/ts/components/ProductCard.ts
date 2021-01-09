@@ -9,7 +9,7 @@ export default class ProductCard {
         private strSource: string
     ) { }
 
-    node(): HTMLLIElement {
+    render(): HTMLLIElement {
         const li = document.createElement('li') as HTMLLIElement;
 
         li.id = this.idMeal;

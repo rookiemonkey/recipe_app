@@ -7,7 +7,7 @@ export default class CategoryItem {
     ) { }
 
 
-    async node(): Promise<HTMLLIElement> {
+    async render(): Promise<HTMLLIElement> {
         const li = document.createElement('li') as HTMLLIElement;
         const lc = this.category.toLowerCase();
         const module = await import(`../../images/${lc}.svg`);

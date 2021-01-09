@@ -86,7 +86,6 @@ ul#list_recipecards {
 ul#list_recipecards .list_recipecards_item {
   height: 450px;
   width: 90%;
-  border: 1px solid rgba(255, 255, 255, 0.25);
   background-position: center;
   background-size: cover;
   background-blend-mode: overlay;
@@ -109,3 +108,48 @@ ul#list_recipecards .list_recipecards_item .overlay {
     font-style: italic;
     font-size: 0.75rem;
     color: white; }
+
+#btn_more_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 15px;
+  padding: 15px; }
+
+#btn_more_container #btn_more {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 800;
+  font-size: 1.75rem;
+  margin: 15px;
+  padding: 15px;
+  cursor: pointer; }
+  #btn_more_container #btn_more:hover, #btn_more_container #btn_more:focus {
+    border: none;
+    outline: none; }
+
+#btn_more_container #btn_more,
+#btn_more_container #btn_more img {
+  width: 100px;
+  height: 100px;
+  -webkit-animation: bounce 1s infinite alternate;
+  animation: bounce 1s infinite alternate; }
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-12px); } }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-12px); } }
