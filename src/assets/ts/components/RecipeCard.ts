@@ -1,5 +1,5 @@
 
-export default class ProductCard {
+export default class RecipeCard {
 
     constructor(
         private idMeal: string,

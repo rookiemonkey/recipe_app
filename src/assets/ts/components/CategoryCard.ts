@@ -26,7 +26,7 @@ export default class CategoryItem {
         // attach onlick event listener
         li.onclick = () => {
             toHighlightCategory(this.categoryId);
-            UIController.renderProductCardsByCat(this.category);
+            UIController.renderRecipeCardsByCat(this.category);
         }
 
         // return the element

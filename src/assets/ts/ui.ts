@@ -1,5 +1,5 @@
 import CategoryCard from './components/CategoryCard';
-import ProductCard from './components/ProductCard';
+import RecipeCard from './components/RecipeCard';
 import BtnMore from './components/BtnMore';
 import variables from './utilities/_variables';
 const { base_url } = variables;
@@ -26,7 +26,7 @@ const UIController = new class UIController {
     }
 
 
-    async renderProductCards(): Promise<void> {
+    async renderRecipeCards(): Promise<void> {
         try {
             const more = document.querySelector('#btn_more') as HTMLButtonElement;
             const parent = document.querySelector('#list_recipecards') as HTMLLIElement;
@@ -42,7 +42,7 @@ const UIController = new class UIController {
 
             for (const meal of datas) {
                 const { idMeal, strMeal, strCategory, strMealThumb, strSource } = meal;
-                const li = new ProductCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
+                const li = new RecipeCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
 
                 parent.appendChild(li);
 
@@ -55,13 +55,13 @@ const UIController = new class UIController {
         }
 
         catch (error) {
-            alert('Error in Rendering ProductCards')
-            console.log('Error in Rendering ProductCards', error)
+            alert('Error in Rendering RecipeCards')
+            console.log('Error in Rendering RecipeCards', error)
         }
     }
 
 
-    async renderProductCardsByCat(query: string): Promise<void> {
+    async renderRecipeCardsByCat(query: string): Promise<void> {
         try {
             const more = document.querySelector('#btn_more') as HTMLButtonElement;
             const parent = document.querySelector('#list_recipecards') as HTMLLIElement;
@@ -72,7 +72,7 @@ const UIController = new class UIController {
 
             for (const meal of meals) {
                 const { idMeal, strMeal, strMealThumb, strSource } = meal;
-                const li = new ProductCard(idMeal, strMeal, strMealThumb, query, strSource).render();
+                const li = new RecipeCard(idMeal, strMeal, strMealThumb, query, strSource).render();
 
                 parent.appendChild(li);
 
@@ -84,8 +84,8 @@ const UIController = new class UIController {
         }
 
         catch (error) {
-            alert('Error in Rendering CategoryCards')
-            console.log('Error in Rendering CategoryCards', error)
+            alert('Error in Rendering RecipeCards by Category')
+            console.log('Error in Rendering RecipeCards by Category', error)
         }
     }
 

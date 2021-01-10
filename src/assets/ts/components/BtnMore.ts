@@ -1,4 +1,4 @@
-import ProductCard from '../components/ProductCard';
+import RecipeCard from './RecipeCard';
 import arrow from '../../images/arrow.svg';
 import variables from '../utilities/_variables';
 const { base_url } = variables;
@@ -39,7 +39,7 @@ export default class BtnMore {
                 const { meals } = await raw.json();
                 const meal = meals[0]
                 const { idMeal, strMeal, strCategory, strMealThumb, strSource } = meal
-                const li = new ProductCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
+                const li = new RecipeCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
 
                 parent.appendChild(li);
 
