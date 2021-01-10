@@ -23,7 +23,7 @@ export default class BtnMore {
 
 
         // mount to DOM
-        const main = document.querySelector('main') as HTMLElement;
+        const main = document.querySelector('#list') as HTMLElement;
         main.appendChild(div);
 
 
