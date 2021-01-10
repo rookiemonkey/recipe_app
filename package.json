@@ -7,7 +7,7 @@
     "dev:serve": "yarn run dev:build && webpack serve --config ./webpack.config.dev.js",
     "dev:build": "clear && rm -rf ./build && yarn run sass:dev && webpack --config ./webpack.config.dev.js && yarn run icon",
     "prod:serve": "yarn run prod:build && webpack serve --config ./webpack.config.prod.js",
-    "prod:build": "clear && rm -rf ./build && yarn run sass:dev && webpack --config ./webpack.config.prod.js && yarn run icon",
+    "prod:build": "clear && rm -rf ./build && yarn run sass:prod && webpack --config ./webpack.config.prod.js && yarn run icon",
     "sass:dev": "clear && node-sass ./src/assets/sass/_index.scss ./src/assets/css/main.css",
     "sass:prod": "clear && node-sass ./src/assets/sass/_index.scss ./src/assets/css/main.css --output-style",
     "icon": "cp ./src/assets/images/favicon.svg ./build"

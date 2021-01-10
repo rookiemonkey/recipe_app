@@ -23,9 +23,16 @@ export default class ProductCard {
             <div class="recipe_meta">
                 <h3>${this.strMeal}</h3>
                 <h5>${this.strCategory}</h5>
-                <p><a href="${this.strSource}">Source</a></p>
+                ${this.strSource
+                ? `<p><a href="${this.strSource}" target="_blank">Source</a></p>`
+                : ''
+            }
             </div>
         `
+
+        li.onclick = () => {
+            console.log(this.idMeal)
+        }
 
         return li;
     }

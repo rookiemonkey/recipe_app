@@ -89,6 +89,16 @@ const UIController = new class UIController {
         }
     }
 
+    async renderRecipe(query: string): Promise<void> {
+        try {
+            const parent = document.querySelector('#recipe') as HTMLElement;
+        }
+
+        catch (error) {
+            alert('Error in Rendering Recipe')
+            console.log('Error in Rendering Recipe', error)
+        }
+    }
 
 }
 
