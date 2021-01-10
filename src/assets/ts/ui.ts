@@ -1,10 +1,13 @@
+import App from './main';
 import CategoryCard from './components/CategoryCard';
 import RecipeCard from './components/RecipeCard';
+import Recipe from './components/Recipe';
 import BtnMore from './components/BtnMore';
 import variables from './utilities/_variables';
 const { base_url } = variables;
 
 const UIController = new class UIController {
+
 
     async renderCategoryItems(): Promise<void> {
         try {
@@ -89,9 +92,13 @@ const UIController = new class UIController {
         }
     }
 
+
     async renderRecipe(query: string): Promise<void> {
         try {
-            const parent = document.querySelector('#recipe') as HTMLElement;
+            const raw = await fetch(`${base_url}/lookup.php?i=${query}`);
+            const { meals } = await raw.json();
+            App.router('recipe');
+            new Recipe(meals[0]).render();
         }
 
         catch (error) {

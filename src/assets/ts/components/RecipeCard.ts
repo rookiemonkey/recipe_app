@@ -1,3 +1,4 @@
+import UIController from '../ui';
 
 export default class RecipeCard {
 
@@ -13,7 +14,6 @@ export default class RecipeCard {
         const li = document.createElement('li') as HTMLLIElement;
 
         li.id = this.idMeal;
-        // li.style.backgroundImage = `url(${this.strMealThumb})`;
         li.classList.add('list_recipecards_item');
 
         li.innerHTML = `
@@ -30,9 +30,7 @@ export default class RecipeCard {
             </div>
         `
 
-        li.onclick = () => {
-            console.log(this.idMeal)
-        }
+        li.onclick = async () => UIController.renderRecipe(this.idMeal)
 
         return li;
     }

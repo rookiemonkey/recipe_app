@@ -1,3 +1,4 @@
 export type State = {
-    background: number
+    background: number,
+    route: string
 }

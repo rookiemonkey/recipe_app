@@ -7,11 +7,25 @@ const App = new class RecipeApp {
 
     constructor() {
         this.state = {
+            route: 'list',
             background: 0
         }
     }
 
-    router() {
+    router(route: string) {
+        const displays = [...document.querySelectorAll(`[data-route]`)]
+        this.state.route = route;
+
+        if (route != 'recipe')
+            document.querySelector('[data-route="recipe"]')!.innerHTML = ``
+
+        displays.forEach((display: any) => {
+
+            display.dataset.route == route
+                ? display.style.display = 'block'
+                : display.style.display = 'none'
+
+        })
 
     }
 

@@ -1,0 +1,54 @@
+#recipe section#recipe_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 80vw;
+	margin: 0 auto;
+	height: 500px;
+}
+
+#recipe section#recipe_details .recipe_details_image,
+#recipe section#recipe_details .recipe_details_meta {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
+
+#recipe section#recipe_details .recipe_details_image {
+	background-position: center;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#recipe section#recipe_details .recipe_details_meta {
+    color: black;
+    padding: $spacing_md;
+    overflow-y: auto;
+
+    h3 {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+}
+
+#recipe section#recipe_details .recipe_details_meta .recipe_details_meta_ingredients,
+#recipe section#recipe_details .recipe_details_meta .recipe_details_meta_instructions {
+    margin: $spacing_lg 0px;
+}
+
+#recipe section#recipe_details .recipe_details_meta .recipe_details_meta_ingredients #list_ingredients {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    li {
+        margin-left: $spacing_md;
+    }
+}
+
+#recipe section#recipe_details .recipe_details_meta .recipe_details_meta_instructions #list_instructions {
+    
+    li {
+        margin-left: $spacing_md;
+        margin-bottom: $spacing_sm;
+    }
+}
