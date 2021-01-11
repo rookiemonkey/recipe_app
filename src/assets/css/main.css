@@ -31,7 +31,8 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.9); }
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 2s ease all; }
 
 #nav {
   margin: 0px auto;

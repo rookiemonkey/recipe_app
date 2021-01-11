@@ -40,6 +40,7 @@ body {
   background-attachment: fixed;
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.90);
+  transition: 2s ease all;
 }
 
 @import './navigation.scss';

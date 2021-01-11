@@ -12,6 +12,7 @@ const App = new class RecipeApp {
         }
     }
 
+
     router(route: string) {
         const displays = [...document.querySelectorAll(`[data-route]`)]
         this.state.route = route;
@@ -29,9 +30,22 @@ const App = new class RecipeApp {
 
     }
 
-    onload() {
+
+    getState(): State {
+        return { ...this.state }
+    }
+
+
+    onload(): void {
         UIController.renderCategoryItems();
         UIController.renderRecipeCards();
+    }
+
+
+    onchangeBackground(): void {
+        this.state.background++
+
+        if (this.state.background >= 10) this.state.background = 0
     }
 
 }

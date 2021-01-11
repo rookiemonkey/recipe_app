@@ -3,6 +3,7 @@ import CategoryCard from './components/CategoryCard';
 import RecipeCard from './components/RecipeCard';
 import Recipe from './components/Recipe';
 import BtnMore from './components/BtnMore';
+import toChangeBackground from './utilities/toChangeBackground';
 import variables from './utilities/_variables';
 const { base_url } = variables;
 
@@ -97,7 +98,9 @@ const UIController = new class UIController {
         try {
             const raw = await fetch(`${base_url}/lookup.php?i=${query}`);
             const { meals } = await raw.json();
+            App.onchangeBackground();
             App.router('recipe');
+            await toChangeBackground(App.getState().background);
             new Recipe(meals[0]).render();
         }
 
