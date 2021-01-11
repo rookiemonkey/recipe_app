@@ -1,5 +1,7 @@
 import App from '../main';
 import brand from '../../images/brand.svg';
+import icon_ingredients from '../../images/icon_ingredients.svg';
+import icon_instructions from '../../images/icon_instructions.svg';
 
 export default class Recipe {
 
@@ -37,10 +39,11 @@ export default class Recipe {
         const ins_container = document.createElement('ol');
 
         instructions.forEach(ins => {
-            ins_container.innerHTML = `
-                ${ins_container.innerHTML}
-                <li>${ins}</li>
-            `
+            if (ins)
+                ins_container.innerHTML = `
+                    ${ins_container.innerHTML}
+                    <li>${ins}</li>
+                `
         })
 
 
@@ -55,18 +58,19 @@ export default class Recipe {
                 </div>
             </nav>
             <section id="recipe_details">
-                <div class="recipe_details_image"></div>
-                <div class="recipe_details_meta">
+                <div class="recipe_details_image">
                     <h2>${this.recipe.strMeal}</h2>
                     <h3>${this.recipe.strArea} &nbsp; | &nbsp; ${this.recipe.strCategory}</h3>
+                </div>
+                <div class="recipe_details_meta">
                     <div class="recipe_details_meta_ingredients">
-                        <h4>Ingredients:</h4>
+                        <h4><img src="${icon_ingredients}" /> Ingredients</h4>
                         <ul id="list_ingredients">
                             ${ing_container.innerHTML}
                         </ul>
                     </div>
                     <div class="recipe_details_meta_instructions">
-                        <h4>Instructions:</h4>
+                        <h4><img src="${icon_instructions}" /> Instructions</h4>
                         <ol id="list_instructions">
                             ${ins_container.innerHTML}
                         </ol>

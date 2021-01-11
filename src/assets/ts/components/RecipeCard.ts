@@ -21,7 +21,7 @@ export default class RecipeCard {
                 <div class="overlay"></div>
             </div>
             <div class="recipe_meta">
-                <h3>${this.strMeal}</h3>
+                <h2>${this.strMeal}</h2>
                 <h5>${this.strCategory}</h5>
                 ${this.strSource
                 ? `<p><a href="${this.strSource}" target="_blank">Source</a></p>`

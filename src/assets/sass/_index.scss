@@ -1,7 +1,15 @@
 $color_white_muted: rgba(255,255,255,0.25);
+$font_header: 'WildHazelNut';
 $spacing_sm: 8px;
 $spacing_md: 15px;
 $spacing_lg: 25px;
+
+@font-face {
+  font-family: 'WildHazelNut';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/wildhazelnut.ttf");
+}
 
 @font-face {
   font-family: 'Poppins';
