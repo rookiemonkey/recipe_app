@@ -4,6 +4,8 @@ This single-page application consumes [TheMealDB](https://www.themealdb.com/api.
 
 I haven't fully used the power of typescript but hey! a small progress is still a progress :tada:
 
+Consider checking the repo's issues, all of my todos are in there :smile:
+
 ![Screenshot](./screenshot.png)
 
 ## Author: <i>Kevin Roi R. Basina</i>
