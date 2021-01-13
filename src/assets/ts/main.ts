@@ -36,9 +36,12 @@ const App = new class RecipeApp {
     }
 
 
-    onload(): void {
-        UIController.renderCategoryItems();
-        UIController.renderRecipeCards();
+    async onload(): Promise<void> {
+        await UIController.renderCategoryItems();
+        await UIController.renderRecipeCards();
+        const preloader = document.querySelector('.preloader') as HTMLDivElement
+        preloader.style.opacity = '0';
+        setTimeout(() => { preloader.remove() }, 500)
     }
 
 
