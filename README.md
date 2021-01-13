@@ -1,6 +1,6 @@
 ## Recipe App
 
-This single-page application consumes [TheMealDB](https://www.themealdb.com/api.php) api was made just to solely practice pure typescript , ES6 and just to have some fun :tada: Below is a screenshot of one of the application route and you can see the live the application [here]() :tada:
+This single-page application consumes [TheMealDB](https://www.themealdb.com/api.php) api was made just to solely practice pure typescript , ES6 and just to have some fun :tada: Below is a screenshot of one of the application route and you can see the live the application [here](https://krrb-prod-recipeappv1.netlify.app) :tada:
 
 I haven't fully used the power of typescript but hey! a small progress is still a progress :tada:
 
