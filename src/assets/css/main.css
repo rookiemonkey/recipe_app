@@ -120,7 +120,13 @@ body {
     font-family: "WildHazelNut"; }
   #recipe section#recipe_details .recipe_details_image h3 {
     font-weight: 400;
-    font-size: 1rem; }
+    font-size: 1rem;
+    display: flex;
+    align-items: center; }
+    #recipe section#recipe_details .recipe_details_image h3 img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px; }
 
 #recipe section#recipe_details .recipe_details_meta {
   color: black;
@@ -200,6 +206,13 @@ ul#list_recipecards .list_recipecards_item .recipe_meta {
   ul#list_recipecards .list_recipecards_item .recipe_meta h2 {
     font-size: 2rem;
     font-family: "WildHazelNut"; }
+  ul#list_recipecards .list_recipecards_item .recipe_meta h5 {
+    display: flex;
+    align-items: center; }
+    ul#list_recipecards .list_recipecards_item .recipe_meta h5 img {
+      height: 20px;
+      width: 20px;
+      margin-right: 8px; }
   ul#list_recipecards .list_recipecards_item .recipe_meta p {
     text-align: right; }
   ul#list_recipecards .list_recipecards_item .recipe_meta p a {

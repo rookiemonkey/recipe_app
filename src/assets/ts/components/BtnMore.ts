@@ -17,7 +17,7 @@ export default class BtnMore {
 
         div.innerHTML = `
             <button id="btn_more">
-                More<img src="${arrow}" />
+                Random<img src="${arrow}" />
             </button>
         `
 
@@ -38,8 +38,8 @@ export default class BtnMore {
                 const raw = await fetch(`${base_url}${this.request}`);
                 const { meals } = await raw.json();
                 const meal = meals[0]
-                const { idMeal, strMeal, strCategory, strMealThumb, strSource } = meal
-                const li = new RecipeCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
+                const { idMeal, strMeal, strCategory, strMealThumb, strSource, strArea } = meal
+                const li = await new RecipeCard(idMeal, strMeal, strMealThumb, strArea, strCategory, strSource).render();
 
                 parent.appendChild(li);
 

@@ -45,8 +45,8 @@ const UIController = new class UIController {
             parent.innerHTML = ``;
 
             for (const meal of datas) {
-                const { idMeal, strMeal, strCategory, strMealThumb, strSource } = meal;
-                const li = new RecipeCard(idMeal, strMeal, strMealThumb, strCategory, strSource).render();
+                const { idMeal, strMeal, strCategory, strMealThumb, strSource, strArea } = meal;
+                const li = await new RecipeCard(idMeal, strMeal, strMealThumb, strArea, strCategory, strSource).render();
 
                 parent.appendChild(li);
 
@@ -75,8 +75,8 @@ const UIController = new class UIController {
             parent.innerHTML = ``;
 
             for (const meal of meals) {
-                const { idMeal, strMeal, strMealThumb, strSource } = meal;
-                const li = new RecipeCard(idMeal, strMeal, strMealThumb, query, strSource).render();
+                const { idMeal, strMeal, strMealThumb, strSource, strArea } = meal;
+                const li = await new RecipeCard(idMeal, strMeal, strMealThumb, strArea, query, strSource).render();
 
                 parent.appendChild(li);
 
