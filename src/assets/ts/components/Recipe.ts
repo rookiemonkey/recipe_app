@@ -9,7 +9,12 @@ export default class Recipe {
         private recipe: any
     ) { }
 
-    render(): void {
+    async render(): Promise<void> {
+
+        // get the country flag
+        let flag = null;
+        if (this.recipe.strArea !== 'Unknown')
+            flag = await import(`../../images/flag_${this.recipe.strArea}.svg`)
 
         // parse ingredient/instructions data
         const instructions: string[] = this.recipe.strInstructions.split("\r\n");
@@ -58,9 +63,12 @@ export default class Recipe {
                 </div>
             </nav>
             <section id="recipe_details">
-                <div class="recipe_details_image">
+                <div class="recipe_details_image" style="background-image: linear-gradient(275deg, white, transparent), url('${this.recipe.strMealThumb}">
                     <h2>${this.recipe.strMeal}</h2>
-                    <h3>${this.recipe.strArea} &nbsp; | &nbsp; ${this.recipe.strCategory}</h3>
+                    <h3>
+                        ${flag ? `<img src="${flag.default}" />` : ''}
+                        ${this.recipe.strArea} &nbsp; | &nbsp; ${this.recipe.strCategory}
+                    </h3>
                 </div>
                 <div class="recipe_details_meta">
                     <div class="recipe_details_meta_ingredients">
@@ -84,14 +92,9 @@ export default class Recipe {
         parent.appendChild(container);
 
 
-        // mount image
-        const image = document.querySelector('.recipe_details_image') as HTMLDivElement;
-        image.style.backgroundImage = `linear-gradient(275deg, white, transparent), url('${this.recipe.strMealThumb}')`
-
-
         // mount event listener to navigation
         const navigations: any = [...document.querySelectorAll('.nav_recipe')!];
-        navigations.forEach((n: any) => n.onclick = () => App.router('list'));
+        navigations.forEach((n: HTMLElement) => n.onclick = () => App.router('list'));
 
     }
 

@@ -59,6 +59,17 @@ ul#list_recipecards .list_recipecards_item .recipe_meta {
         font-family: $font_header;
     }
 
+    h5 {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 20px;
+            width: 20px;
+            margin-right: $spacing_sm;
+        }
+    }
+
     p {
         text-align: right;
     }
