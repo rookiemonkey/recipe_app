@@ -122,7 +122,10 @@ body {
   width: 50%;
   height: 100%;
   background-color: white;
-  padding: 15px; }
+  padding: 25px; }
+
+#recipe section#recipe_details .recipe_details_meta {
+  padding: 25px 50px 25px 50px; }
 
 #recipe section#recipe_details .recipe_details_image {
   background-position: center;
@@ -157,7 +160,9 @@ body {
 #recipe section#recipe_details .recipe_details_meta .recipe_details_meta_ingredients h4,
 #recipe section#recipe_details .recipe_details_meta .recipe_details_meta_instructions h4 {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.25rem; }
   #recipe section#recipe_details .recipe_details_meta .recipe_details_meta_ingredients h4 img,
   #recipe section#recipe_details .recipe_details_meta .recipe_details_meta_instructions h4 img {
     width: 30px;
