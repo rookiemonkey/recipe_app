@@ -65,3 +65,18 @@
 #nav #nav_options .highlighted {
     background-color: $color_white_muted;
 }
+
+//! IPAD
+@media only screen and (max-width: 768px) {
+  #nav #nav_options {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+//! IPHONEX
+@media only screen and (max-width: 375px) {
+  #nav #nav_options {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+  }
+}

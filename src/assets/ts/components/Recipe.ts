@@ -11,6 +11,9 @@ export default class Recipe {
 
     async render(): Promise<void> {
 
+        // get angle of gradien depending on user device
+        const angle = window.screen.width <= 768 ? 0 : 275;
+
         // get the country flag
         let flag = null;
         if (this.recipe.strArea !== 'Unknown')
@@ -63,7 +66,7 @@ export default class Recipe {
                 </div>
             </nav>
             <section id="recipe_details">
-                <div class="recipe_details_image" style="background-image: linear-gradient(275deg, white, transparent), url('${this.recipe.strMealThumb}">
+                <div class="recipe_details_image" style="background-image: linear-gradient(${angle}deg, white, transparent), url('${this.recipe.strMealThumb}">
                     <h2>${this.recipe.strMeal}</h2>
                     <h3>
                         ${flag ? `<img src="${flag.default}" />` : ''}

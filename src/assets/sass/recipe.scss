@@ -90,3 +90,35 @@
         margin-bottom: $spacing_sm;
     }
 }
+
+//! IPAD
+@media only screen and (max-width: 768px) {
+    #recipe section#recipe_details {
+        flex-flow: wrap;
+    }
+
+    #recipe section#recipe_details .recipe_details_image,
+    #recipe section#recipe_details .recipe_details_meta {
+        width: 100%;
+    }
+}
+
+//! IPHONEX
+@media only screen and (max-width: 375px) {
+    #recipe section#recipe_details {
+        width: 100vw;
+        margin: 0px;
+    }
+
+    #recipe section#recipe_details .recipe_details_image {
+        h3, h2 {
+            width: 100%;
+        }
+    }
+
+    #recipe section#recipe_details .recipe_details_meta {
+        font-size: small;
+        height: 80vh;
+        padding: $spacing_lg !important;
+    }
+}

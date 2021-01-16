@@ -46,3 +46,10 @@
     0% { transform: translateY(0); }
     100% { transform: translateY(-12px); }
 }
+
+//! IPHONEX
+@media only screen and (max-width: 375px) {
+    #btn_more_container {
+        margin: ($spacing_lg+$spacing_md) 0px;
+    }
+}
