@@ -49,6 +49,7 @@ body {
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.90);
   transition: 2s ease all;
+  overflow-y: hidden;
 }
 
 .preloader {

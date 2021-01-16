@@ -41,7 +41,11 @@ const App = new class RecipeApp {
         await UIController.renderRecipeCards();
         const preloader = document.querySelector('.preloader') as HTMLDivElement
         preloader.style.opacity = '0';
-        setTimeout(() => { preloader.remove() }, 500)
+
+        setTimeout(() => {
+            preloader.remove()
+            document.body.style.overflowY = 'auto';
+        }, 500)
     }
 
 

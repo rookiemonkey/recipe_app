@@ -38,7 +38,8 @@ body {
   background-attachment: fixed;
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.9);
-  transition: 2s ease all; }
+  transition: 2s ease all;
+  overflow-y: hidden; }
 
 .preloader {
   width: 100%;
